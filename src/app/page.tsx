@@ -11,6 +11,8 @@ import Programs from "./components/programs";
 import Schedule from "./components/schedule";
 import Contacts from "./components/contacts";
 import Footer from "./components/footer";
+import MobileBottomNav from "./components/bottomnav";
+import MobileAppBar from "./components/MobileAppBar";
 
 const blackopsone = Black_Ops_One({
   weight: ["400"],
@@ -24,15 +26,24 @@ const oswald = Oswald({
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -40,10 +51,19 @@ export default function Home() {
     <>
       <Head>
         <title>Punching Palace Boxing Club</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-zinc-900 text-white min-h-screen">
-        {/* Navigation - Added transition and conditional opacity */}
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'}`}>
+        <MobileAppBar
+          onMenuClick={() => setIsMenuOpen(!isMenuOpen)}
+          isScrolled={isScrolled}
+        />
+
+        <nav
+          className={`fixed w-full z-50 transition-all duration-300 ${
+            isScrolled ? "bg-black shadow-lg" : "bg-transparent"
+          } hidden lg:block`}
+        >
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16 sm:h-20">
               <div className="flex items-center space-x-2">
@@ -54,7 +74,9 @@ export default function Home() {
                   height={48}
                   className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                 />
-                <span className={`${blackopsone.className} text-xl sm:text-2xl text-red-500`}>
+                <span
+                  className={`${blackopsone.className} text-xl sm:text-2xl text-red-500`}
+                >
                   PUNCHING PALACE
                 </span>
               </div>
@@ -80,19 +102,34 @@ export default function Home() {
             {isMenuOpen && (
               <div className="lg:hidden absolute w-full left-0 top-full backdrop-blur-lg bg-black/90 border-t border-zinc-800">
                 <div className="flex flex-col py-4">
-                  <MobileNavLink href="#home" onClick={() => setIsMenuOpen(false)}>
+                  <MobileNavLink
+                    href="#home"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Home
                   </MobileNavLink>
-                  <MobileNavLink href="#about" onClick={() => setIsMenuOpen(false)}>
+                  <MobileNavLink
+                    href="#about"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     About
                   </MobileNavLink>
-                  <MobileNavLink href="#programs" onClick={() => setIsMenuOpen(false)}>
+                  <MobileNavLink
+                    href="#programs"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Programs
                   </MobileNavLink>
-                  <MobileNavLink href="#schedule" onClick={() => setIsMenuOpen(false)}>
+                  <MobileNavLink
+                    href="#schedule"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Schedule
                   </MobileNavLink>
-                  <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
+                  <MobileNavLink
+                    href="#contact"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Contact
                   </MobileNavLink>
                 </div>
@@ -100,6 +137,8 @@ export default function Home() {
             )}
           </div>
         </nav>
+
+        {isMobile && <div className="h-16" />}
 
         {/* Hero Section */}
         <Hero />
@@ -117,7 +156,11 @@ export default function Home() {
         <Contacts />
 
         {/* Footer */}
-        <Footer />
+        {!isMobile && <Footer />}
+
+        <MobileBottomNav />
+
+        {isMobile && <div className="h-16" />}
       </main>
     </>
   );
@@ -150,4 +193,3 @@ const MobileNavLink = ({ href, children, onClick }: MobileNavLinkProps) => (
     {children}
   </a>
 );
-

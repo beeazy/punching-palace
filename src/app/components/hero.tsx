@@ -13,7 +13,7 @@ const oswald = Oswald({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen">
+    <section id='home' className="relative min-h-screen">
               <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90 z-10"></div>
               
               <div className="container mx-auto flex flex-col items-center justify-center text-center min-h-screen px-4 sm:px-6 relative z-20">
