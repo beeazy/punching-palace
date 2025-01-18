@@ -18,7 +18,7 @@ export default function About() {
           THE PALACE DIFFERENCE
         </h2>
         <p className={`${oswald.className} text-center text-gray-300 mt-4 max-w-3xl mx-auto text-lg`}>
-          At Punching Palace Boxing Camp, we forge champions through discipline, dedication, and world-class training.
+          At Punching Palace Boxing Club, we forge champions through discipline, dedication, and world-class training.
           Our facility combines traditional boxing wisdom with modern training techniques.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">

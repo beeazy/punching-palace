@@ -26,17 +26,18 @@ export default function Hero() {
   return (
     <section id='home' className="relative min-h-screen overflow-hidden">
       <div 
-        className="absolute inset-0 z-10 animate-gradient-shift"
-        style={{
-          background: `
-            linear-gradient(
-              225deg,
-              rgba(0, 0, 0, 0.9) 0%,
-              rgba(0, 0, 0, 0.7) 50%,
-              rgba(139, 0, 0, 0.3) 100%
-            )
-          `
-        }}
+        className="absolute inset-0 z-10 bg-gradient-to-b from-black/10 to-black/80"
+
+        // style={{
+        //   background: `
+        //     linear-gradient(
+        //       225deg,
+        //       rgba(0, 0, 0, 0.9) 0%,
+        //       rgba(0, 0, 0, 0.7) 50%,
+        //       rgba(139, 0, 0, 0.3) 100%
+        //     )
+        //   `
+        // }}
       />
       
       <div className="absolute inset-0 z-20">
