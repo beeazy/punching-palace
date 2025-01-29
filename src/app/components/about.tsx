@@ -1,14 +1,5 @@
 import React from 'react';
-import { Black_Ops_One, Oswald } from 'next/font/google';
-
-const blackopsone = Black_Ops_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
-
-const oswald = Oswald({
-  subsets: ['latin'],
-});
+import { blackopsone, oswald } from '../utils/fonts';
 
 export default function About() {
   return (
@@ -19,7 +10,7 @@ export default function About() {
         </h2>
         <p className={`${oswald.className} text-center text-gray-300 mt-4 max-w-3xl mx-auto text-lg`}>
           At Punching Palace Boxing Club, we forge champions through discipline, dedication, and world-class training.
-          Our facility combines traditional boxing wisdom with modern training techniques.
+          Box and keep on smiling, zero pressure, box for fun.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           <FeatureCard 
@@ -27,8 +18,8 @@ export default function About() {
             description="Train with professional coaches who have competed at the highest levels."
           />
           <FeatureCard 
-            title="Premium Facility"
-            description="State-of-the-art equipment and multiple training areas designed for optimal results."
+            title="Community Support"
+            description="Join a community of fighters who motivate and inspire each other."
           />
           <FeatureCard 
             title="All Skill Levels"

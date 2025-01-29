@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Black_Ops_One, Oswald } from 'next/font/google';
+import { blackopsone, oswald } from '../utils/fonts';
 
-const blackopsone = Black_Ops_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
-
-const oswald = Oswald({
-  subsets: ['latin'],
-});
 
 export default function Hero() {
   const [scrollPosition, setScrollPosition] = useState(0);

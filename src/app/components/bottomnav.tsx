@@ -1,11 +1,7 @@
 // components/MobileBottomNav.tsx
 import { Home, Info, Calendar, PhoneCall, Dumbbell } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Oswald } from "next/font/google";
-
-const oswald = Oswald({
-  subsets: ["latin"],
-});
+import { oswald } from "../utils/fonts";
 
 export default function MobileBottomNav() {
   const [isMobile, setIsMobile] = useState(false);

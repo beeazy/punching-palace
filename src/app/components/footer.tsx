@@ -1,10 +1,6 @@
 import React from 'react';
-import { Black_Ops_One } from 'next/font/google';
+import { blackopsone } from '../utils/fonts';
 
-const blackopsone = Black_Ops_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
 
 export default function Footer() {
   return (

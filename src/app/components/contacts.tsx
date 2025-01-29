@@ -1,13 +1,5 @@
-import { Black_Ops_One, Oswald } from 'next/font/google';
+import { blackopsone, oswald } from "../utils/fonts";
 
-const blackopsone = Black_Ops_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
-
-const oswald = Oswald({
-  subsets: ['latin'],
-});
 
 export default function Contacts() {
   return (
@@ -40,7 +32,10 @@ export default function Contacts() {
                 rel="noopener noreferrer"
                 className="text-red-500 hover:text-red-400 transition duration-200 inline-flex items-center gap-2 mt-1"
               >
-                <span>Muhuri Rd, Kenya</span>
+                {/* Located along Muhuri Road. (300m from 87 Junction) */}
+                <span>
+                  Along Muhuri Road
+                </span>
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -137,6 +132,23 @@ export default function Contacts() {
             </div>
           </div>
         </div>
+        {/* <div className="mt-12 max-w-4xl mx-auto px-4">
+        <h3 className={`${oswald.className} text-xl font-semibold text-white mb-4 text-center`}>
+          Find Us Here
+        </h3>
+        <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden border border-zinc-700 shadow-lg bg-zinc-900">
+          <iframe
+            title="Firm and Fit Gymnasium Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7600770817424!2d36.6666667!3d-1.2500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b4a66696dd1%3A0x1c5e3e5b1d36c117!2sFirm%20and%20Fit%20Gymnasium%20Kikuyu!5e0!3m2!1sen!2ske!4v1625764283456!5m2!1sen!2ske"
+            className="absolute top-0 left-0 w-full h-full filter contrast-75 hover:contrast-100 transition-all duration-300"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            aria-label="Location map for Firm and Fit Gymnasium"
+          />
+        </div>
+      </div> */}
       </div>
     </section>
   );

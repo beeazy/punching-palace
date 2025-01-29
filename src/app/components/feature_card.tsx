@@ -1,8 +1,5 @@
-import { Oswald } from 'next/font/google';
+import { oswald } from "../utils/fonts";
 
-const oswald = Oswald({
-  subsets: ['latin'],
-});
 
 const FeatureCard = ({ title, description }: FeatureCardProps) => (
     <div className="bg-zinc-800 p-6 sm:p-8 rounded-lg text-center transform hover:scale-105 transition duration-200 ease-in-out border border-zinc-700 hover:border-red-500">

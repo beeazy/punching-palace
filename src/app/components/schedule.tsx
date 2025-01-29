@@ -1,13 +1,5 @@
-import { Black_Ops_One, Oswald } from "next/font/google";
+import { blackopsone, oswald } from "../utils/fonts";
 
-const oswald = Oswald({
-  subsets: ['latin'],
-});
-
-const blackopsone = Black_Ops_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
 
 export default function Schedule() {
     return (
@@ -54,18 +46,28 @@ export default function Schedule() {
                 <button
                   // navigate to href="#contact"
                   onClick={() => {
-                    window.location.href = "#contact";
+                    // handlesmooth scroll
+                    const contactSection = document.getElementById("contact");
+                    contactSection?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transform hover:scale-105 transition duration-200 ease-in-out w-full sm:w-auto"
                 >
                   Get Notified
                 </button>
-                <a
+                {/* <a
                   href="#contact"
                   className="text-red-500 hover:text-red-400 transition-colors duration-200 font-semibold text-lg"
                 >
                   Contact Us for Updates
-                </a>
+                </a> */}
+
+                <button
+                  onClick={() => {
+                    const contactSection = document.getElementById("contact");
+                    contactSection?.scrollIntoView({ behavior: "smooth" });
+                  }}>
+                  Contact Us for Updates
+                </button>
               </div>
             </div>
           </div>

@@ -1,13 +1,9 @@
 // components/MobileAppBar.tsx
 import { Menu, Search, Share2 } from "lucide-react";
 import Image from "next/image";
-import { Black_Ops_One } from "next/font/google";
 import { useState } from "react";
+import { blackopsone } from "../utils/fonts";
 
-const blackopsone = Black_Ops_One({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 interface MobileAppBarProps {
   onMenuClick: () => void;

@@ -1,14 +1,5 @@
-import { Black_Ops_One, Oswald } from 'next/font/google';
+import { blackopsone, oswald } from '../utils/fonts';
 import FeatureCard from './feature_card';
-
-const blackopsone = Black_Ops_One({
-  weight: ['400'],
-  subsets: ['latin'],
-});
-
-const oswald = Oswald({
-  subsets: ['latin'],
-});
 
 export default function Programs() {
     return (
@@ -31,22 +22,22 @@ export default function Programs() {
                 title="Beginner Boxing"
                 description="Learn the basics of boxing with our beginner-friendly program."
               />
-              <FeatureCard
+              {/* <FeatureCard
                 title="Advanced Boxing"
                 description="Take your skills to the next level with our advanced training sessions."
-              />
-              <FeatureCard
+              /> */}
+              {/* <FeatureCard
                 title="Youth Boxing"
                 description="Programs designed specifically for young aspiring boxers."
-              />
+              /> */}
               <FeatureCard
                 title="Fitness Boxing"
                 description="Get in shape with our high-intensity fitness boxing classes."
               />
-              <FeatureCard
+              {/* <FeatureCard
                 title="Personal Training"
                 description="One-on-one training sessions with our expert coaches."
-              />
+              /> */}
               <FeatureCard
                 title="Competition Training"
                 description="Prepare for your next fight with our competition-focused training."

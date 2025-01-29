@@ -2,7 +2,7 @@
 
 import Head from "next/head";
 import Image from "next/image";
-import { Black_Ops_One, Oswald } from "next/font/google";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Hero from "./components/hero";
@@ -13,15 +13,8 @@ import Contacts from "./components/contacts";
 import Footer from "./components/footer";
 import MobileBottomNav from "./components/bottomnav";
 import MobileAppBar from "./components/MobileAppBar";
-
-const blackopsone = Black_Ops_One({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
-const oswald = Oswald({
-  subsets: ["latin"],
-});
+import { blackopsone, oswald } from "./utils/fonts";
+import VideoSection from "./components/videosection";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,6 +40,14 @@ export default function Home() {
     };
   }, []);
 
+  const handleSmoothScroll = (href: string) => {
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -67,13 +68,15 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16 sm:h-20">
               <div className="flex items-center space-x-2">
-                <Image
-                  src="/logo.jpg"
-                  alt="Punching Palace Logo"
-                  width={48}
-                  height={48}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
-                />
+                <Link href="#home" scroll={false} onClick={() => handleSmoothScroll("#home")}>
+                  <Image
+                    src="/logo.jpg"
+                    alt="Punching Palace Logo"
+                    width={48}
+                    height={48}
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
+                  />
+                </Link>
                 <span
                   className={`${blackopsone.className} text-xl sm:text-2xl text-red-500`}
                 >
@@ -90,46 +93,40 @@ export default function Home() {
               </button>
 
               <div className="hidden lg:flex space-x-8">
-                <NavLink href="#home">Home</NavLink>
-                <NavLink href="#about">About</NavLink>
-                <NavLink href="#programs">Programs</NavLink>
-                <NavLink href="#schedule">Schedule</NavLink>
-                <NavLink href="#contact">Contact</NavLink>
+                <NavLink href="#home" onClick={handleSmoothScroll}>
+                  Home
+                </NavLink>
+                <NavLink href="#about" onClick={handleSmoothScroll}>
+                  About
+                </NavLink>
+                <NavLink href="#programs" onClick={handleSmoothScroll}>
+                  Programs
+                </NavLink>
+                <NavLink href="#schedule" onClick={handleSmoothScroll}>
+                  Schedule
+                </NavLink>
+                <NavLink href="#contact" onClick={handleSmoothScroll}>
+                  Contact
+                </NavLink>
               </div>
             </div>
 
-            {/* Mobile Navigation - Improved animation and spacing */}
             {isMenuOpen && (
               <div className="lg:hidden absolute w-full left-0 top-full backdrop-blur-lg bg-black/90 border-t border-zinc-800">
                 <div className="flex flex-col py-4">
-                  <MobileNavLink
-                    href="#home"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <MobileNavLink href="#home" onClick={handleSmoothScroll}>
                     Home
                   </MobileNavLink>
-                  <MobileNavLink
-                    href="#about"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <MobileNavLink href="#about" onClick={handleSmoothScroll}>
                     About
                   </MobileNavLink>
-                  <MobileNavLink
-                    href="#programs"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <MobileNavLink href="#programs" onClick={handleSmoothScroll}>
                     Programs
                   </MobileNavLink>
-                  <MobileNavLink
-                    href="#schedule"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <MobileNavLink href="#schedule" onClick={handleSmoothScroll}>
                     Schedule
                   </MobileNavLink>
-                  <MobileNavLink
-                    href="#contact"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <MobileNavLink href="#contact" onClick={handleSmoothScroll}>
                     Contact
                   </MobileNavLink>
                 </div>
@@ -140,26 +137,14 @@ export default function Home() {
 
         {isMobile && <div className="h-16" />}
 
-        {/* Hero Section */}
         <Hero />
-
-        {/* About Us Section */}
         <About />
-
-        {/* Programs Section */}
         <Programs />
-
-        {/* Schedule Section */}
+        <VideoSection />
         <Schedule />
-
-        {/* Contact Section */}
         <Contacts />
-
-        {/* Footer */}
         {!isMobile && <Footer />}
-
         <MobileBottomNav />
-
         {isMobile && <div className="h-16" />}
       </main>
     </>
@@ -169,27 +154,35 @@ export default function Home() {
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
+  onClick: (href: string) => void;
 }
 
-interface MobileNavLinkProps extends NavLinkProps {
-  onClick: () => void;
-}
+interface MobileNavLinkProps extends NavLinkProps {}
 
-const NavLink = ({ href, children }: NavLinkProps) => (
-  <a
+const NavLink = ({ href, children, onClick }: NavLinkProps) => (
+  <Link
     href={href}
+    scroll={false}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(href);
+    }}
     className={`${oswald.className} text-gray-300 hover:text-red-500 transition duration-200 text-lg`}
   >
     {children}
-  </a>
+  </Link>
 );
 
 const MobileNavLink = ({ href, children, onClick }: MobileNavLinkProps) => (
-  <a
+  <Link
     href={href}
-    onClick={onClick}
+    scroll={false}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(href);
+    }}
     className={`${oswald.className} text-gray-300 hover:text-red-500 transition duration-200 text-lg block py-2`}
   >
     {children}
-  </a>
+  </Link>
 );

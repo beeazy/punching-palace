@@ -153,3 +153,11 @@ body {
     opacity: 1;
   }
 }
+
+iframe {
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover iframe {
+  transform: scale(1.03);
+}
