@@ -51,8 +51,109 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Punching Palace Boxing Club</title>
+        <title>
+          Punching Palace Boxing Club | Professional Boxing Training in Kikuyu
+        </title>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="language" content="en" />
+
+        {/* Primary Meta Tags */}
+        <meta
+          name="title"
+          content="Punching Palace Boxing Club | Professional Boxing Training in Kikuyu"
+        />
+        <meta
+          name="description"
+          content="Elite boxing training in Kikuyu, Nairobi. Join our professional boxing classes, get fit with expert coaches, and learn proper technique. First class free!"
+        />
+        <meta
+          name="keywords"
+          content="boxing club Kikuyu, boxing training Nairobi, boxing classes, boxing gym, fitness boxing, boxing coaches Kenya"
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://punching-palace.vercel.app" />
+        <meta
+          property="og:title"
+          content="Punching Palace Boxing Club | Professional Boxing Training"
+        />
+        <meta
+          property="og:description"
+          content="Elite boxing training in Kikuyu. Join our professional classes today!"
+        />
+        <meta
+          property="og:image"
+          content="https://punching-palace.vercel.app/twitter-image.jpg"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://punching-palace.vercel.app" />
+        <meta name="twitter:title" content="Punching Palace Boxing Club" />
+        <meta
+          name="twitter:description"
+          content="Elite boxing training in Kikuyu, Nairobi"
+        />
+        <meta
+          name="twitter:image"
+          content="https://punching-palace.vercel.app/twitter-image.jpg"
+        />
+
+        {/* Local Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SportsActivityLocation",
+            name: "Punching Palace Boxing Club",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Muhuri Road",
+              addressLocality: "Kikuyu",
+              addressRegion: "Nairobi",
+              addressCountry: "KE",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "-1.2500000",
+              longitude: "36.6666667",
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "06:00",
+                closes: "21:00",
+              },
+            ],
+          })}
+        </script>
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-30" />
+        <meta name="geo.placename" content="Kikuyu, Nairobi" />
+        <meta name="geo.position" content="-1.2500000;36.6666667" />
+        <meta name="ICBM" content="-1.2500000, 36.6666667" />
+
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#DC2626" />
       </Head>
       <main className="bg-zinc-900 text-white min-h-screen">
         <MobileAppBar
@@ -68,7 +169,11 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16 sm:h-20">
               <div className="flex items-center space-x-2">
-                <Link href="#home" scroll={false} onClick={() => handleSmoothScroll("#home")}>
+                <Link
+                  href="#home"
+                  scroll={false}
+                  onClick={() => handleSmoothScroll("#home")}
+                >
                   <Image
                     src="/logo.jpg"
                     alt="Punching Palace Logo"
