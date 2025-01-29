@@ -51,8 +51,8 @@ export const VideoSection = () => {
             className={`
               ${oswald.className} 
               group
-              bg-[#25D366] 
-              hover:bg-[#128C7E] 
+              bg-zinc-700 
+              hover:bg-zinc-800 
               text-white 
               px-8 
               py-4 
@@ -67,14 +67,6 @@ export const VideoSection = () => {
               text-lg
             `}
           >
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6 group-hover:scale-110 transition-transform"
-            >
-              <path d="M12 2C6.48 2 2 6.48 2 12c0 2.17.7 4.19 1.91 5.83L2 22l4.17-1.91C7.81 21.29 9.83 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-2.14 0-4.12-.74-5.69-1.97l-.38-.29-2.75 1.26 1.26-2.75-.29-.38C2.74 14.12 2 12.14 2 10c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9z"/>
-            </svg> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="20"
@@ -95,7 +87,8 @@ export const VideoSection = () => {
             mx-auto
           `}
           >
-            Get access to exclusive content, training tips, and community in our WhatsApp group.
+            Get access to exclusive content, training tips, and community in our
+            WhatsApp group.
           </p>
         </div>
       </div>
