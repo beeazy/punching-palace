@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section id='home' className="relative min-h-screen overflow-hidden">
       <div 
-        className="absolute inset-0 z-10 bg-gradient-to-b from-black/10 to-black/80"
+        className="absolute inset-0 z-10 bg-black/80"
 
         // style={{
         //   background: `
