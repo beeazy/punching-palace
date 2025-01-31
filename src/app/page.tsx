@@ -210,6 +210,9 @@ export default function Home() {
                 <NavLink href="#schedule" onClick={handleSmoothScroll}>
                   Schedule
                 </NavLink>
+                <NavLink href="#gallery" onClick={handleSmoothScroll}>
+                  Gallery
+                </NavLink>
                 <NavLink href="#contact" onClick={handleSmoothScroll}>
                   Contact
                 </NavLink>

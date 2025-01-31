@@ -18,7 +18,7 @@ export const VideoSection = () => {
       : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"; // Three or more videos
 
   return (
-    <section className="py-16 px-4 bg-zinc-800/30">
+    <section className="py-16 px-4 bg-zinc-800/30" id="gallery">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className={`${oswald.className} text-4xl font-bold mb-4`}>
