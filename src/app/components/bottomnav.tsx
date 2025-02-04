@@ -1,5 +1,5 @@
 // components/MobileBottomNav.tsx
-import { Home, Info, Calendar, PhoneCall, Dumbbell } from "lucide-react";
+import { Home, Info, Calendar, PhoneCall, Dumbbell, Film } from "lucide-react";
 import { useEffect, useState } from "react";
 import { oswald } from "../utils/fonts";
 
@@ -27,7 +27,9 @@ export default function MobileBottomNav() {
     { icon: <Home size={24} />, label: 'Home', href: '#home' },
     // { icon: <Info size={24} />, label: 'About', href: '#about' },
     { icon: <Dumbbell size={24} />, label: 'Programs', href: '#programs' },
-    { icon: <Calendar size={24} />, label: 'Schedule', href: '#schedule' },
+    // { icon: <Calendar size={24} />, label: 'Schedule', href: '#schedule' },
+    // gallery section
+    { icon: <Film size={24} />, label: 'Gallery', href: '#gallery' },
     { icon: <PhoneCall size={24} />, label: 'Contact', href: '#contact' },
   ];
 
