@@ -8,6 +8,12 @@ export const VideoSection = () => {
       description:
         "Meet our head coach and learn about his training philosophy",
     },
+    {
+      title: "Documentary: Guts Over Glory",
+      videoId: "VS73thfxYZI",
+      description:
+        "Follow the journey of Ian Mutele showing us the importance of being motivated and pushing yourself beyond the ordinary.",
+    },
   ];
 
   const gridClassName =
