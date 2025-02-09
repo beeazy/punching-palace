@@ -19,7 +19,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden bg-zinc-900"
     >
-      <div className="absolute inset-0 z-10 bg-[url('/grain.png')] opacity-30 mix-blend-overlay" />
+      <div className="absolute inset-0 z-10 bg-black opacity-20 mix-blend-overlay" />
 
       <div className="absolute inset-0 z-20">
         <div className="particles-container">
@@ -102,22 +102,23 @@ export default function Hero() {
           className="opacity-50 scale-110 animate-ken-burns"
         />
       </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce-slow">
-        <svg
-          className="w-6 h-6 text-white opacity-75 animate-pulse"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </div>
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50 animate-bounce-slow cursor-grabbing">
+        <div className="bg-black/30 backdrop-blur-sm p-3 rounded-full border border-white/10 hover:border-red-500/50 transition-colors">
+          <svg
+            className="w-6 h-6 text-white/75 hover:text-red-500 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
+      </div> */}
     </section>
   );
 }
