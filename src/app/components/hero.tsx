@@ -42,8 +42,8 @@ export default function Hero() {
         <h1
           className={`${blackopsone.className} text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-bold tracking-wider text-white mb-4 sm:mb-6 animate-text-focus-in`}
         >
-          PUNCHING OUR WAY TO
-          <span className="block text-red-500 animate-text-glow">THE TOP</span>
+          TRAIN LIKE A
+          <span className="block text-red-500 animate-text-glow">WARRIOR</span>
         </h1>
         <p
           className={`${oswald.className} text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 max-w-2xl text-gray-200 px-4`}
