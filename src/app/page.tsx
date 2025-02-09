@@ -262,9 +262,10 @@ export default function Home() {
         <About />
         <Programs />
         <Schedule />
-        <VideoSection />
-        <TeamSection />
+        {/* <TeamSection /> */}
         <GallerySection />
+        <VideoSection />
+
         {/* <SuccessStories /> */}
         <Contacts />
         {!isMobile && <Footer />}

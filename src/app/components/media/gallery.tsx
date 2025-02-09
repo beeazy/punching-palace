@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Image from "next/image";
 import { blackopsone, oswald } from "../../utils/fonts";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const urlEndpoint = "https://ik.imagekit.io/zbt3fl83rg/";
 
 export const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -16,12 +16,120 @@ export const GallerySection = () => {
 
   const images = [
     {
-      src: "/gallery/training-1.jpg",
-      category: "training",
-      title: "Morning Training Session",
-      date: "2024",
+      src: urlEndpoint + "palace/PunchingPalace18.jpeg",
+      category: "members",
+      title: "Back in the day",
+      date: "Throwback",
     },
-    // Add more images with categories
+    {
+      src: urlEndpoint + "palace/PunchingPalace19.jpeg",
+      category: "members",
+      title: "Back in the day",
+      date: "Throwback",
+    },
+
+    {
+      src: urlEndpoint + "palace/PunchingPalace1.jpeg",
+      category: "members",
+      title: "Back in the day",
+      date: "Throwback",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace2.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace3.jpeg",
+      category: "members",
+      title: "The Team",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace4.jpeg",
+      category: "members",
+      title: "The Team",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace5.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace6.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace7.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace8.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace9.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace10.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace11.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace12.jpeg",
+      category: "training",
+      title: "Light Sparring Session",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace13.jpeg",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace14.jpeg",
+      category: "members",
+      title: "The Team",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace15.jpeg",
+      category: "members",
+      title: "The Team",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace16.jpeg",
+      category: "members",
+      title: "The Team",
+      date: "2025",
+    },
+    {
+      src: urlEndpoint + "palace/PunchingPalace17.jpeg",
+      category: "members",
+      title: "The Team",
+      date: "2025",
+    },
   ];
 
   const filteredImages =
@@ -30,13 +138,16 @@ export const GallerySection = () => {
       : images.filter((img) => img.category === activeCategory);
 
   return (
-    <section className="py-16 px-4 bg-zinc-800 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grain.png')] opacity-20" />
+    <section
+      className="py-16 px-4 bg-zinc-800 relative overflow-hidden"
+      id="gallery"
+    >
+      <div className="absolute inset-0 bg-[url('/grain.png')] opacity-10 bg-center" />
 
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2
-            className={`${blackopsone.className} text-4xl font-bold mb-4 text-red-500`}
+            className={`${blackopsone.className} pt-12 text-4xl font-bold mb-4 text-red-500`}
           >
             THE FAMILY ALBUM
           </h2>
@@ -81,11 +192,10 @@ export const GallerySection = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group relative aspect-square overflow-hidden rounded-lg bg-zinc-900"
               >
-                <Image
+                <img
                   src={image.src}
                   alt={image.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-4">

@@ -65,7 +65,7 @@ export const VideoSection = () => {
   return (
     <section
       className="py-16 px-4 bg-zinc-800/30 relative overflow-hidden"
-      id="gallery"
+      id="videos"
     >
       <div className="absolute inset-0 bg-[url('/texture.png')] opacity-10" />
 

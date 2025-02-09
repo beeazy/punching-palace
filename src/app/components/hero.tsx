@@ -94,7 +94,7 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/hero-image.jpg"
+          src="/hero.jpg"
           alt="Boxing Training at Punching Palace"
           fill
           style={{ objectFit: "cover", objectPosition: "center 30%" }}

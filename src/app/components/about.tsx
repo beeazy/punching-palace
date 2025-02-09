@@ -45,7 +45,7 @@ export default function About() {
         <div className="mt-16 bg-zinc-800/50 p-8 rounded-lg border border-zinc-700">
           <div className="flex flex-col items-center text-center">
             <img
-              src="/boxer.png"
+              src="/ian.png"
               alt="Boxing Member"
               className="w-20 h-20 rounded-full mb-4 border-2 border-red-500"
             />
