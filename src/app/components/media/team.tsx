@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const TeamSection = () => {
   const team: any = [
     // {
-    //   name: "Coach Elly",
+    //   name: "Coach Owino",
     //   role: "Head Coach",
     //   image: "/coach-elly.jpg",
     //   bio: "15+ years of boxing experience. Former national champion. Dedicated to building champions and changing lives through boxing.",

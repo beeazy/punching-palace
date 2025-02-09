@@ -49,7 +49,7 @@ export default function Hero() {
           className={`${oswald.className} text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 max-w-2xl text-gray-200 px-4`}
         >
           Join the family at Punching Palace. Whether you're here to fight or
-          get fit, Coach Elly's got your back! 👊
+          get fit, Coach Owino's got your back! 👊
         </p>
 
         <div className="mt-8 sm:mt-12 space-y-4 sm:space-y-0 sm:space-x-6 flex flex-col sm:flex-row animate-slide-up">

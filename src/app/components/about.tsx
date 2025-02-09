@@ -27,7 +27,7 @@ export default function About() {
           <FeatureCard
             icon="🥊"
             title="Real Boxing Knowledge"
-            description="Learn from someone who's been in the ring. Coach Elly knows what works because he's lived it."
+            description="Learn from someone who's been in the ring. Coach Owino knows what works because he's lived it."
           />
           <FeatureCard
             icon="💪"
