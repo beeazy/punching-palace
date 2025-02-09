@@ -82,7 +82,7 @@ export default function Hero() {
         </div>
         <div className="absolute bottom-48 right-4 animate-float opacity-75 hover:opacity-100 transition-opacity delay-100">
           <div className="bg-black/80 backdrop-blur-lg px-4 py-2 rounded-full border border-red-500/20">
-            <p className="text-sm">🏆 3 Amateur Champions</p>
+            <p className="text-sm">🏆 Champions</p>
           </div>
         </div>
       </div>
