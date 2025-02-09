@@ -102,8 +102,8 @@ export const GallerySection = () => {
     },
     {
       src: urlEndpoint + "palace/PunchingPalace13.jpeg",
-      category: "events",
-      title: "Nairobi Novices Championship",
+      category: "training",
+      title: "Yomba Yomba Boxing Club 🇹🇿",
       date: "2025",
     },
     {
