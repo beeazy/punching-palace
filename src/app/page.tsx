@@ -18,6 +18,35 @@ import { VideoSection } from "./components/media/videosection";
 import { TeamSection } from "./components/media/team";
 import { GallerySection } from "./components/media/gallery";
 import { SuccessStories } from "./components/media/success-stories";
+import { Metadata } from "next";
+import Script from "next/script";
+
+// You can keep the schema.org JSON-LD script in your layout or page component
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  name: "Punching Palace Boxing Club",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Muhuri Road",
+    addressLocality: "Kikuyu",
+    addressRegion: "Nairobi",
+    addressCountry: "KE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "-1.2500000",
+    longitude: "36.6666667",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "06:00",
+      closes: "21:00",
+    },
+  ],
+};
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,106 +86,6 @@ export default function Home() {
         <title>
           Punching Palace Boxing Club | Professional Boxing Training in Kikuyu
         </title>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="language" content="en" />
-
-        {/* Primary Meta Tags */}
-        <meta
-          name="title"
-          content="Punching Palace Boxing Club | Professional Boxing Training in Kikuyu"
-        />
-        <meta
-          name="description"
-          content="Elite boxing training in Kikuyu, Nairobi. Join our professional boxing classes, get fit with expert coaches, and learn proper technique. First class free!"
-        />
-        <meta
-          name="keywords"
-          content="boxing club Kikuyu, boxing training Nairobi, boxing classes, boxing gym, fitness boxing, boxing coaches Kenya"
-        />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://punching-palace.vercel.app" />
-        <meta
-          property="og:title"
-          content="Punching Palace Boxing Club | Professional Boxing Training"
-        />
-        <meta
-          property="og:description"
-          content="Elite boxing training in Kikuyu. Join our professional classes today!"
-        />
-        <meta
-          property="og:image"
-          content="https://punching-palace.vercel.app/twitter-image.jpg"
-        />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://punching-palace.vercel.app" />
-        <meta name="twitter:title" content="Punching Palace Boxing Club" />
-        <meta
-          name="twitter:description"
-          content="Elite boxing training in Kikuyu, Nairobi"
-        />
-        <meta
-          name="twitter:image"
-          content="https://punching-palace.vercel.app/twitter-image.jpg"
-        />
-
-        {/* Local Business Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SportsActivityLocation",
-            name: "Punching Palace Boxing Club",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Muhuri Road",
-              addressLocality: "Kikuyu",
-              addressRegion: "Nairobi",
-              addressCountry: "KE",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: "-1.2500000",
-              longitude: "36.6666667",
-            },
-            openingHoursSpecification: [
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                ],
-                opens: "06:00",
-                closes: "21:00",
-              },
-            ],
-          })}
-        </script>
-
-        {/* Geographic Tags */}
-        <meta name="geo.region" content="KE-30" />
-        <meta name="geo.placename" content="Kikuyu, Nairobi" />
-        <meta name="geo.position" content="-1.2500000;36.6666667" />
-        <meta name="ICBM" content="-1.2500000, 36.6666667" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#DC2626" />
       </Head>
       <main className="relative">
         <MobileAppBar
@@ -272,6 +201,11 @@ export default function Home() {
         <MobileBottomNav />
         {isMobile && <div className="h-16" />}
       </main>
+      <Script
+        id="business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+      />
     </>
   );
 }
