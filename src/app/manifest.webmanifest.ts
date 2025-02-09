@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-export const manifest: MetadataRoute.Manifest = {
+const manifest: MetadataRoute.Manifest = {
   name: 'Punching Palace Boxing Club',
   short_name: 'Punching Palace',
   description: 'Punching Palace Boxing Club - Unleash the Champion Within',
@@ -27,3 +27,5 @@ export const manifest: MetadataRoute.Manifest = {
     },
   ],
 };
+
+export default manifest;
