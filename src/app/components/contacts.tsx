@@ -129,7 +129,7 @@ export default function Contacts() {
           <div className="relative w-full h-[300px] sm:h-full rounded-xl overflow-hidden border border-zinc-700 shadow-lg">
             <iframe
               title="Firm and Fit Gymnasium Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7600770817424!2d36.6666667!3d-1.2500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b4a66696dd1%3A0x1c5e3e5b1d36c117!2sFirm%20and%20Fit%20Gymnasium%20Kikuyu!5e0!3m2!1sen!2ske!4v1625764283456!5m2!1sen!2ske"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4851.0237474219375!2d36.7017381!3d-1.2621129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1ed32b6cf2bd%3A0xd86576b462ef8c7d!2sFirm%20and%20Fit%20gymnasium!5e1!3m2!1sen!2ske!4v1739085652342!5m2!1sen!2ske"
               className="absolute inset-0 w-full h-full filter contrast-75 hover:contrast-100 transition-all duration-300"
               style={{ border: 0 }}
               allowFullScreen={true}
