@@ -1,6 +1,6 @@
 import { oswald } from "../utils/fonts";
 
-export const VideoSection = () => {
+export const VideoSection3 = () => {
   const videos = [
     {
       title: "Coach Spotlight",
@@ -127,4 +127,4 @@ const VideoCard = ({
   </div>
 );
 
-export default VideoSection;
+export default VideoSection3;

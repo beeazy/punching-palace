@@ -14,7 +14,10 @@ import Footer from "./components/footer";
 import MobileBottomNav from "./components/bottomnav";
 import MobileAppBar from "./components/MobileAppBar";
 import { blackopsone, oswald } from "./utils/fonts";
-import VideoSection from "./components/videosection";
+import { VideoSection } from "./components/media/videosection";
+import { TeamSection } from "./components/media/team";
+import { GallerySection } from "./components/media/gallery";
+import { SuccessStories } from "./components/media/success-stories";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -155,7 +158,7 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#DC2626" />
       </Head>
-      <main className="bg-zinc-900 text-white min-h-screen">
+      <main className="relative">
         <MobileAppBar
           onMenuClick={() => setIsMenuOpen(!isMenuOpen)}
           isScrolled={isScrolled}
@@ -163,30 +166,40 @@ export default function Home() {
 
         <nav
           className={`fixed w-full z-50 transition-all duration-300 ${
-            isScrolled ? "bg-black shadow-lg" : "bg-transparent"
-          } hidden lg:block`}
+            isScrolled
+              ? "bg-black/95 shadow-red-900/20 shadow-lg"
+              : "bg-transparent"
+          } hidden lg:block border-b border-red-900/20`}
         >
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16 sm:h-20">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <Link
                   href="#home"
                   scroll={false}
                   onClick={() => handleSmoothScroll("#home")}
                 >
-                  <Image
-                    src="/logo.jpg"
-                    alt="Punching Palace Logo"
-                    width={48}
-                    height={48}
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
-                  />
+                  <div className="relative">
+                    <Image
+                      src="/logo.jpg"
+                      alt="Punching Palace Logo"
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full border-2 border-red-500 shadow-lg shadow-red-500/20"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse" />
+                  </div>
                 </Link>
-                <span
-                  className={`${blackopsone.className} text-xl sm:text-2xl text-red-500`}
-                >
-                  PUNCHING PALACE
-                </span>
+                <div className="flex flex-col">
+                  <span
+                    className={`${blackopsone.className} text-2xl text-red-500 leading-none`}
+                  >
+                    PUNCHING PALACE
+                  </span>
+                  <span className="text-xs text-zinc-400">
+                    Punching Our Way to the Top Since 2020
+                  </span>
+                </div>
               </div>
 
               <button
@@ -199,22 +212,22 @@ export default function Home() {
 
               <div className="hidden lg:flex space-x-8">
                 <NavLink href="#home" onClick={handleSmoothScroll}>
-                  Home
+                  The Gym
                 </NavLink>
                 <NavLink href="#about" onClick={handleSmoothScroll}>
-                  About
+                  Our Story
                 </NavLink>
                 <NavLink href="#programs" onClick={handleSmoothScroll}>
-                  Programs
+                  Train With Us
                 </NavLink>
                 <NavLink href="#schedule" onClick={handleSmoothScroll}>
-                  Schedule
+                  When to Come
                 </NavLink>
                 <NavLink href="#gallery" onClick={handleSmoothScroll}>
-                  Gallery
+                  The Family
                 </NavLink>
                 <NavLink href="#contact" onClick={handleSmoothScroll}>
-                  Contact
+                  Hit Us Up
                 </NavLink>
               </div>
             </div>
@@ -248,8 +261,11 @@ export default function Home() {
         <Hero />
         <About />
         <Programs />
-        <VideoSection />
         <Schedule />
+        <VideoSection />
+        <TeamSection />
+        <GallerySection />
+        {/* <SuccessStories /> */}
         <Contacts />
         {!isMobile && <Footer />}
         <MobileBottomNav />
@@ -275,9 +291,10 @@ const NavLink = ({ href, children, onClick }: NavLinkProps) => (
       e.preventDefault();
       onClick(href);
     }}
-    className={`${oswald.className} text-gray-300 hover:text-red-500 transition duration-200 text-lg`}
+    className={`${oswald.className} text-gray-300 hover:text-red-500 transition duration-200 text-lg relative group`}
   >
     {children}
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-200 group-hover:w-full" />
   </Link>
 );
 
@@ -289,7 +306,7 @@ const MobileNavLink = ({ href, children, onClick }: MobileNavLinkProps) => (
       e.preventDefault();
       onClick(href);
     }}
-    className={`${oswald.className} text-gray-300 hover:text-red-500 transition duration-200 text-lg block py-2`}
+    className={`${oswald.className} text-gray-300 hover:text-red-500 transition duration-200 text-xl block py-3 px-6 border-b border-zinc-800/50`}
   >
     {children}
   </Link>
