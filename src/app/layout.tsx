@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  themeColor: "#DC2626",
+  themeColor: "#0d0d0d",
   other: {
     language: "en",
     "geo.region": "KE-30",

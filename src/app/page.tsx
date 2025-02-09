@@ -18,7 +18,6 @@ import { VideoSection } from "./components/media/videosection";
 import { TeamSection } from "./components/media/team";
 import { GallerySection } from "./components/media/gallery";
 import { SuccessStories } from "./components/media/success-stories";
-import { Metadata } from "next";
 import Script from "next/script";
 
 // You can keep the schema.org JSON-LD script in your layout or page component
