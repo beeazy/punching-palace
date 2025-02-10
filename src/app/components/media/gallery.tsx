@@ -30,9 +30,9 @@ export const GallerySection = () => {
 
     {
       src: urlEndpoint + "palace/PunchingPalace1.jpeg",
-      category: "members",
-      title: "Back in the day",
-      date: "Throwback",
+      category: "events",
+      title: "Nairobi Novices Championship",
+      date: "2025",
     },
     {
       src: urlEndpoint + "palace/PunchingPalace2.jpeg",
