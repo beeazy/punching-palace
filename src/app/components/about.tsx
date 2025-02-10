@@ -19,8 +19,9 @@ export default function About() {
         <p
           className={`${oswald.className} text-center text-gray-300 mt-4 max-w-3xl mx-auto text-lg`}
         >
-          At Punching Palace, we're about real boxing, real community, and real results.
-          Coach Elly Owino brings years of ring experience to help you become your strongest self. 💪
+          At Punching Palace, we're about real boxing, real community, and real
+          results. Coach Elly Owino brings years of ring experience to help you
+          become your strongest self. 💪
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
@@ -50,10 +51,11 @@ export default function About() {
               className="w-20 h-20 rounded-full mb-4 border-2 border-red-500"
             />
             <p className="text-lg text-gray-300 italic mb-4">
-              "Coach Elly Owino... let's say he's like a father to me, and a really great mentor."
+              "Coach Elly Owino... let's say he's like a father to me, and a
+              really great mentor."
             </p>
             <p className="text-red-500 font-semibold">
-              - Ian Mutele, Captain
+              - Ian Mutele, Member
             </p>
           </div>
         </div>
