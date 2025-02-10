@@ -55,7 +55,7 @@ export default function About() {
               really great mentor."
             </p>
             <p className="text-red-500 font-semibold">
-              - Ian Mutele, Member
+              - Ian Mutele
             </p>
           </div>
         </div>
